@@ -1,10 +1,13 @@
 # Tour Finder
 
-This web application solves the Traveling Salesman Problem for a set of randomly generated coordinates. The app is built using Flask and Python for the backend and JavaScript, HTML and CSS for the frontend.
+## Overview
+
+This web application solves the 2D Euclidean Traveling Salesman Problem for a set of randomly generated coordinates. The app is built using Flask and Python for the backend and JavaScript, HTML and CSS for the frontend.
 
 ## Features
 
 - Generate random coordinates within a canvas
+- Solve it using the Double Tree and 2-Opt algorithm
 - Visualize the TSP solution on the canvas
 - Display the time taken to compute the solution
 
