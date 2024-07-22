@@ -15,7 +15,7 @@ body {
     max-width: 800px;
     text-align: center;
     background: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -57,20 +57,19 @@ canvas {
     text-align: center;
     width: 100%;
     background: rgba(255, 255, 255, 0.8);
-    padding: 10px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 #solution-time {
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: calc(100% - 22px);
-    max-width: 300px;
+    max-width: 250px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -79,27 +78,27 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .form-inline input {
     padding: 10px;
-    font-size: 14px;
-    max-width: 200px;
-    margin: 5px 10px 5px 0;
+    font-size: 15px;
+    max-width: 150px;
+    margin: 0px 5px;
     flex: 1;
 }
 
 .form-inline button {
     padding: 10px;
-    font-size: 14px;
+    font-size: 15px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 5px 0;
+    margin: 0px 5px;
 }
 
 button:hover {

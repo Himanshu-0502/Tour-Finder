@@ -1,7 +1,7 @@
 document.getElementById('tsp-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const numCoordinates = document.getElementById('num-coordinates').value;
+    const numCoord = document.getElementById('num-coord').value;
 
     // Adjust canvas size based on window size
     resizeCanvas();
@@ -12,7 +12,7 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
 
     // Generate random coordinates within the canvas dimensions
     const coordinates = [];
-    for (let i = 0; i < numCoordinates; i++) {
+    for (let i = 0; i < numCoord; i++) {
         const x = Math.floor(Math.random() * width);
         const y = Math.floor(Math.random() * height);
         coordinates.push([x, y]);
@@ -32,9 +32,9 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
         const { tour, time } = result;
 
         drawSolution(coordinates, tour);
-        document.getElementById('solution-time').value = `Time taken: ${time.toFixed(2)} seconds`;
+        document.getElementById('solution-time').value = `Time Taken: ${time.toFixed(2)} seconds`;
     } else {
-        alert('Error solving TSP');
+        alert('Error in Solving');
     }
 });
 
