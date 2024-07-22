@@ -17,12 +17,11 @@
             </div>
             <div class="control">
                 <form id="tsp-form" class="form-inline">
-                    <label for="num-coordinates">Number of Coordinates:</label>
-                    <input type="number" id="num-coordinates" name="num-coordinates" min="2" required>
+                    <input type="number" id="num-coordinates" name="num-coordinates" min="2" placeholder="Enter a number" required>
                     <button type="submit">Solve TSP</button>
                 </form>
                 <div id="display-time">
-                    <p id="solution-time">Time taken: -- seconds</p>
+                    <input type="text" id="solution-time" placeholder="Time Taken" readonly>
                 </div>
             </div>
         </main>

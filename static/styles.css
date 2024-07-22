@@ -66,36 +66,40 @@ canvas {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .form-inline {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.form-inline label {
+.form-inline input {
+    padding: 10px;
     font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.form-inline input, .form-inline button {
-    padding: 8px;
-    font-size: 14px;
-    width: 100%;
     max-width: 200px;
-    margin: 5px 0;
+    margin: 5px 10px 5px 0;
+    flex: 1;
 }
 
-button {
+.form-inline button {
+    padding: 10px;
+    font-size: 14px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 5px 0;
 }
 
 button:hover {

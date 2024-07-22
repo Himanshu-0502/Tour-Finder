@@ -3,11 +3,6 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
 
     const numCoordinates = document.getElementById('num-coordinates').value;
 
-    if (numCoordinates < 2) {
-        alert("Please enter a number greater than or equal to 2");
-        return;
-    }
-
     // Adjust canvas size based on window size
     resizeCanvas();
 
@@ -37,7 +32,7 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
         const { tour, time } = result;
 
         drawSolution(coordinates, tour);
-        document.getElementById('solution-time').innerText = `Time taken: ${time.toFixed(2)} seconds`;
+        document.getElementById('solution-time').value = `Time taken: ${time.toFixed(2)} seconds`;
     } else {
         alert('Error solving TSP');
     }
