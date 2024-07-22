@@ -2,10 +2,6 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const numCoordinates = document.getElementById('num-coordinates').value;
-    if (numCoordinates < 2) {
-        alert("Please enter a number greater than or equal to 2");
-        return;
-    }
 
     // Adjust canvas size based on window size
     resizeCanvas();
