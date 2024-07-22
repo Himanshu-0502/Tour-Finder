@@ -5,7 +5,7 @@ def create_distance_matrix(coordinates):
     return np.array([[int(np.linalg.norm(c1 - c2)) for c2 in coordinates] for c1 in coordinates])
 
 def minimum_spanning_tree(distance_matrix):
-    """Finds the Minimum Spanning Tree (MST) using Prim's algorithm."""
+    """Finds the Minimum Spanning Tree using Prim's algorithm."""
     n = len(distance_matrix)
     selected = [False] * n
     min_edge = [(float('inf'), -1)] * n
@@ -30,6 +30,10 @@ def adjacency_list(mst):
         adj_list.setdefault(v, []).append(u)
     return adj_list
 
+def root(tree):
+    """Finds root nodes in the tree nodes with one connection."""
+    return [node for node, neighbors in tree.items() if len(neighbors) == 1]
+
 def dfs(node, tree, tour, visited):
     """Performs Depth-First Search (DFS) to generate a tour."""
     visited[node] = True
@@ -45,9 +49,11 @@ def tour_cost(tour, distance_matrix):
 def construct_tour(distance_matrix):
     """Constructs an initial tour using MST and DFS."""
     mst = minimum_spanning_tree(distance_matrix)
+    sorted(mst, key=lambda x: distance_matrix[x[0]][x[1]])
     tree = adjacency_list(mst)
+    root_nodes = root(tree)
     best_tour = list(range(len(distance_matrix)))
-    for node in tree:
+    for node in root_nodes:
         visited = [False] * len(distance_matrix)
         tour = []
         dfs(node, tree, tour, visited)
