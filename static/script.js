@@ -23,7 +23,7 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
     }
 
     // Send coordinates to the server and get the solution
-    const response = await fetch('/solve_tsp', {
+    const response = await fetch('/solve', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
