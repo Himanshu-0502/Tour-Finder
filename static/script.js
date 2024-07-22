@@ -3,6 +3,11 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
 
     const numCoordinates = document.getElementById('num-coordinates').value;
 
+    if (numCoordinates < 2) {
+        alert("Please enter a number greater than or equal to 2");
+        return;
+    }
+
     // Adjust canvas size based on window size
     resizeCanvas();
 
@@ -72,7 +77,7 @@ resizeCanvas();
 
 function resizeCanvas() {
     const canvas = document.getElementById('tsp-canvas');
-    const container = document.getElementById('results');
+    const container = document.getElementById('display');
     canvas.width = container.clientWidth;
-    canvas.height = container.clientWidth;
+    canvas.height = canvas.width;  // Ensure a square canvas
 }
