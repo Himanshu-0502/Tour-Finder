@@ -92,4 +92,5 @@ def solver(coordinates):
     distance_matrix = create_distance_matrix(coordinates)
     optimal_tour = construct_tour(distance_matrix)
     optimized_tour = tour_optimization(optimal_tour, distance_matrix)
-    return optimized_tour
+    new_coordinates = [coordinates[i].tolist() for i in optimized_tour]
+    return new_coordinates

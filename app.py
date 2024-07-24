@@ -15,13 +15,13 @@ def solve():
     coordinates = np.array(data['coordinates'])
     
     start_time = time.time()
-    optimized_tour = solver(coordinates)
+    new_coordinates = solver(coordinates)
     stop_time = time.time()
     
     solution_time = stop_time - start_time
     
     result = {
-        'tour': optimized_tour,
+        'new_coordinates': new_coordinates,
         'time': solution_time
     }
     return jsonify(result)

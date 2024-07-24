@@ -29,16 +29,16 @@ document.getElementById('tsp-form').addEventListener('submit', async (e) => {
 
     if (response.ok) {
         const result = await response.json();
-        const { tour, time } = result;
-
-        drawSolution(coordinates, tour);
+        const { new_coordinates, time } = result;
+        
+        drawSolution(new_coordinates);
         document.getElementById('solution-time').value = `Time Taken: ${time.toFixed(2)} seconds`;
     } else {
-        alert('Error in Solving');
+        alert('Error in solving');
     }
 });
 
-function drawSolution(coordinates, tour) {
+function drawSolution(coordinates) {
     const canvas = document.getElementById('tsp-canvas');
     const ctx = canvas.getContext('2d');
     const width = canvas.width;
@@ -51,9 +51,9 @@ function drawSolution(coordinates, tour) {
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(coordinates[tour[0]][0], coordinates[tour[0]][1]);
-    for (let i = 1; i < tour.length; i++) {
-        ctx.lineTo(coordinates[tour[i]][0], coordinates[tour[i]][1]);
+    ctx.moveTo(coordinates[0][0], coordinates[0][1]);
+    for (let i = 1; i < coordinates.length; i++) {
+        ctx.lineTo(coordinates[i][0], coordinates[i][1]);
     }
     ctx.closePath();
     ctx.stroke();
